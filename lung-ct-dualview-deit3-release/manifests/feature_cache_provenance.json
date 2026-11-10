@@ -1,0 +1,56 @@
+{
+  "purpose": "Lets a reader reproduce the frozen-feature fingerprint recorded in results/test/holdout_test_lock.json without redistributing the 11 MB feature cache NPZ.",
+  "excluded_artifacts": [
+    {
+      "name": "region_features.npz",
+      "source_path": "runs/adaptive_region_v3/region_features.npz",
+      "reason": "binary feature cache (558 x 7 x 768 float32); excluded from release by policy",
+      "bytes": 11097019,
+      "file_sha256": "d0a0ffed8df5ae6751ee05d4b436508d73a819bc01d31ee896c1701801b07f2a",
+      "shape": [558, 7, 768],
+      "dtype": "float32",
+      "array_digest_sha256": "dfb0011e81f2c3a1e7a49249e0d6169c174fb19ba198c90b00e009f30d2941b6",
+      "array_digest_definition": "sha256(np.ascontiguousarray(features, dtype=float32).tobytes()) as computed by src/experiment_v34.py::load_data",
+      "npz_keys": ["features", "rel", "views", "signature", "order_digest", "model_id"],
+      "embedded_signature": "522710c76a60df73d6776ae8a05e75d46c943dbc006215bf81d045a49ed3dae2"
+    },
+    {
+      "name": "dev_features.npz",
+      "source_path": "runs/chest_duplicate_aware_cv_v3/dev_features.npz",
+      "reason": "grouping/selector feature cache; excluded, published because manifests/dev_plan_v3.json stores its file hash",
+      "bytes": 1595344,
+      "file_sha256": "05ef772096edb758cd63e4ed95dbebc9a3672eb59c25ee28b43640e571d74eae"
+    },
+    {
+      "name": "holdout_frozen_features.npz",
+      "source_path": "runs/adaptive_region_v36_test_locked/holdout_frozen_features.npz",
+      "reason": "288-image frozen feature cache used for test-time crop selection and for feature_extractor_replay.json",
+      "bytes": 5721022,
+      "file_sha256": "1b0ad526c8da0502f98f49ecaf7381245e7e6c4237e0f5558e3b9dd8bd5c916a"
+    },
+    {
+      "name": "selector_full_DEV.joblib",
+      "source_path": "runs/adaptive_region_v36_test_locked/selector_full_DEV.joblib",
+      "reason": "fitted six-expert selector (sklearn joblib binary); excluded by .gitignore policy",
+      "bytes": 188808,
+      "file_sha256": "b4149e87ea6ffedaf5393dd152fc877d59518ca03db04961948274eaa43c95e0"
+    },
+    {
+      "name": "train_view_choices.npz",
+      "source_path": "runs/adaptive_region_v36_test_locked/train_view_choices.npz",
+      "reason": "cached inner-OOF crop choices for the 558 development images",
+      "bytes": 905,
+      "file_sha256": "f0f4ed1ff08a089c710e588c7c484a69c80b47168344047a2b7ffadf7b77428c"
+    }
+  ],
+  "how_to_recompute_fingerprint": "python scripts/smoke_check.py --show fingerprint-recipe",
+  "recipe": {
+    "signature": "522710c76a60df73d6776ae8a05e75d46c943dbc006215bf81d045a49ed3dae2",
+    "rel_order_source": "manifests/dev_image_list_v3.csv (row order, train/valid rows only)",
+    "y_source": "class_folder prefix mapped to adenocarcinoma/large.cell.carcinoma/normal/squamous.cell.carcinoma",
+    "group_source": "manifests/dev_groups.csv raw 'group' column values (strings, not zero-padded)",
+    "views": ["global", "center72", "center90", "upper_left", "upper_right", "lower_left", "lower_right"],
+    "features_sha256": "dfb0011e81f2c3a1e7a49249e0d6169c174fb19ba198c90b00e009f30d2941b6",
+    "hash_definition": "sha256(json.dumps(obj, sort_keys=True, ensure_ascii=False).encode('utf-8'))"
+  }
+}

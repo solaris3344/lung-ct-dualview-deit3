@@ -1,0 +1,187 @@
+{
+  "protocol": "V3.4 20-epoch three-seed cross-fitted dual-view DeiT3 + baseline-anchored rescue",
+  "evidence": "558 DEV images, 508 similarity groups; NO patient-disjoint/external validation",
+  "signature": "522710c76a60df73d6776ae8a05e75d46c943dbc006215bf81d045a49ed3dae2",
+  "seeds": [
+    42,
+    52,
+    62
+  ],
+  "epochs": 20,
+  "baseline_source": "Found 0 uniquely reproducible baseline directories (expected exactly one).",
+  "hyperparameters_predeclared": {
+    "global_training_loss_weight": 0.8,
+    "internal_fixed_region_weight": 0.15,
+    "anchor_weights": [
+      0.05,
+      0.1
+    ],
+    "guarded_max_weight": 0.15,
+    "guarded_baseline_confidence_threshold": 0.9,
+    "guarded_regional_confidence_threshold": 0.55
+  },
+  "methods": {
+    "trained_global": {
+      "acc": 0.9605734767025089,
+      "correct": 536,
+      "balanced_acc": 0.9270105187238662,
+      "macro_f1": 0.9324989284792169,
+      "recall": {
+        "ADC": 0.9815668202764977,
+        "LCC": 0.9555555555555556,
+        "NOR": 0.7948717948717948,
+        "SCC": 0.9760479041916168
+      },
+      "confusion": [
+        [
+          213,
+          1,
+          2,
+          1
+        ],
+        [
+          3,
+          129,
+          3,
+          0
+        ],
+        [
+          6,
+          1,
+          31,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          163
+        ]
+      ]
+    },
+    "trained_region": {
+      "acc": 0.9444444444444444,
+      "correct": 527,
+      "balanced_acc": 0.9342054360694501,
+      "macro_f1": 0.9355345229612049,
+      "recall": {
+        "ADC": 0.9585253456221198,
+        "LCC": 0.9407407407407408,
+        "NOR": 0.8974358974358975,
+        "SCC": 0.9401197604790419
+      },
+      "confusion": [
+        [
+          208,
+          2,
+          2,
+          5
+        ],
+        [
+          5,
+          127,
+          1,
+          2
+        ],
+        [
+          3,
+          0,
+          35,
+          1
+        ],
+        [
+          6,
+          3,
+          1,
+          157
+        ]
+      ]
+    },
+    "internal_fixed_15": {
+      "acc": 0.9659498207885304,
+      "correct": 539,
+      "balanced_acc": 0.9462412879546356,
+      "macro_f1": 0.9453955197679369,
+      "recall": {
+        "ADC": 0.9815668202764977,
+        "LCC": 0.9555555555555556,
+        "NOR": 0.8717948717948718,
+        "SCC": 0.9760479041916168
+      },
+      "confusion": [
+        [
+          213,
+          1,
+          2,
+          1
+        ],
+        [
+          3,
+          129,
+          3,
+          0
+        ],
+        [
+          3,
+          1,
+          34,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          163
+        ]
+      ]
+    },
+    "internal_guarded": {
+      "acc": 0.9623655913978495,
+      "correct": 537,
+      "balanced_acc": 0.9334207751341226,
+      "macro_f1": 0.9368926237563708,
+      "recall": {
+        "ADC": 0.9815668202764977,
+        "LCC": 0.9555555555555556,
+        "NOR": 0.8205128205128205,
+        "SCC": 0.9760479041916168
+      },
+      "confusion": [
+        [
+          213,
+          1,
+          2,
+          1
+        ],
+        [
+          3,
+          129,
+          3,
+          0
+        ],
+        [
+          5,
+          1,
+          32,
+          1
+        ],
+        [
+          2,
+          1,
+          1,
+          163
+        ]
+      ]
+    }
+  },
+  "comparisons": {},
+  "limitations": [
+    "These are geometric crops, not validated lung segmentation.",
+    "These are similarity-group heldouts, NOT patient-disjoint subjects.",
+    "Prior V3/V3.1/V3.2 development guided design: this is exploratory, NOT untouched confirmation.",
+    "V3.4 fixed/gated blending is not proof of calibrated confidence or clinical reliability.",
+    "Unknown slice source overlap remains; independent patient-identified cohort is needed.",
+    "An old V3 OOF file is used only if class order, 558 paths, plan signature and 534/558 reproduce."
+  ],
+  "warning": "Old V3 ensemble OOF NOT RECONSTRUCTED; no legitimate comparison to 95.70% yet."
+}

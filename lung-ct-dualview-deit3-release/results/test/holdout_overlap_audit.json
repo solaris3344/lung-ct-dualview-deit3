@@ -1,0 +1,79 @@
+{
+  "n_test": 288,
+  "class_counts": {
+    "ADC": 120,
+    "LCC": 51,
+    "NOR": 27,
+    "SCC": 90
+  },
+  "exact_duplicate_count": 0,
+  "exact_duplicate_paths": [],
+  "near_duplicate_heuristic_count": 16,
+  "near_duplicate_candidates": [
+    {
+      "path": "test/adenocarcinoma/000158 (3).png",
+      "min_64bit_dhash_distance": 3
+    },
+    {
+      "path": "test/normal/10 (2) - Copy.png",
+      "min_64bit_dhash_distance": 3
+    },
+    {
+      "path": "test/normal/10 - Copy (2) - Copy.png",
+      "min_64bit_dhash_distance": 2
+    },
+    {
+      "path": "test/normal/10 - Copy (3).png",
+      "min_64bit_dhash_distance": 3
+    },
+    {
+      "path": "test/normal/10 - Copy - Copy.png",
+      "min_64bit_dhash_distance": 3
+    },
+    {
+      "path": "test/normal/11 (2) - Copy.png",
+      "min_64bit_dhash_distance": 2
+    },
+    {
+      "path": "test/normal/11 - Copy (2) - Copy.png",
+      "min_64bit_dhash_distance": 1
+    },
+    {
+      "path": "test/normal/11 - Copy (3).png",
+      "min_64bit_dhash_distance": 2
+    },
+    {
+      "path": "test/normal/11 - Copy - Copy.png",
+      "min_64bit_dhash_distance": 1
+    },
+    {
+      "path": "test/normal/12 (2) - Copy.png",
+      "min_64bit_dhash_distance": 0
+    },
+    {
+      "path": "test/normal/12 - Copy (3).png",
+      "min_64bit_dhash_distance": 0
+    },
+    {
+      "path": "test/normal/12 - Copy - Copy.png",
+      "min_64bit_dhash_distance": 0
+    },
+    {
+      "path": "test/normal/21.png",
+      "min_64bit_dhash_distance": 0
+    },
+    {
+      "path": "test/normal/6 (2) - Copy.png",
+      "min_64bit_dhash_distance": 0
+    },
+    {
+      "path": "test/normal/7 (2) - Copy.png",
+      "min_64bit_dhash_distance": 3
+    },
+    {
+      "path": "test/normal/7 - Copy (2) - Copy.png",
+      "min_64bit_dhash_distance": 3
+    }
+  ],
+  "warning": "dHash flags are heuristic, not evidence of shared patients; manually audit near matches."
+}

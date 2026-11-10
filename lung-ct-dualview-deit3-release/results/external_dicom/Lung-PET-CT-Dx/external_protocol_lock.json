@@ -1,0 +1,8 @@
+{
+  "plan_signature": "522710c76a60df73d6776ae8a05e75d46c943dbc006215bf81d045a49ed3dae2",
+  "method": "0.85global+0.15region",
+  "cohort": "Lung-PET-CT-Dx",
+  "external_manifest_hash": "1334026187377d7fe178f777ebfcf315a16bc8cdb2afcb2eaa5d63f67401d085",
+  "n_images": 1211,
+  "n_patients": 251
+}

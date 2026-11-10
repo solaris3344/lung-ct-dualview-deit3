@@ -1,0 +1,154 @@
+{
+  "evidence": "UNTOUCHED held-out 288 images from same source dataset; not independent hospital/patient validation",
+  "model": "3-seed DeiT3 final refit trained on all 558 DEV images; NOT original 15-model V3.4 CV ensemble",
+  "freeze": {
+    "status": "TEST_LOCKED_BEFORE_INFERENCE",
+    "method": "0.85 global + 0.15 selected region",
+    "n_expected": 288,
+    "signature": "522710c76a60df73d6776ae8a05e75d46c943dbc006215bf81d045a49ed3dae2",
+    "fingerprint": "5763e693aaf61c928b829cfa2926218c02917358b4e6cdf2ba5673f28b988946",
+    "test_manifest_sha": "00f29024bae662c25a73064603b277ad8ad61c3bcc5ce65659ba38b65345b3d3",
+    "weights_sha256": {
+      "42": "e5c57946fb60d858543f43125b38f04abe6852875734d351991ec31107b73640",
+      "52": "84d0cecd00e8c8d2f49f3b95830fa5531eec9fa997d4515c921e17b782e7d3b7",
+      "62": "0bd601f7a7fb7a139e8c3e09d0f5eb059fc53c3bdf554048c97536d91c80de4e"
+    },
+    "notes": "Test never used for model selection. Only once. Comparisons to DEV OOF are descriptive due to final refit."
+  },
+  "duplicate_audit": {
+    "exact_matches": 0,
+    "near_duplicate_candidates": 16
+  },
+  "methods": {
+    "global": {
+      "n": 288,
+      "correct": 274,
+      "accuracy": 0.9513888888888888,
+      "wilson95_accuracy_ci": [
+        0.9200690477127059,
+        0.9708256217788641
+      ],
+      "macro_f1": 0.9542395624766058,
+      "balanced_accuracy": 0.9523148148148148,
+      "confusion_true_rows": [
+        [
+          114,
+          5,
+          0,
+          1
+        ],
+        [
+          0,
+          51,
+          0,
+          0
+        ],
+        [
+          2,
+          0,
+          25,
+          0
+        ],
+        [
+          6,
+          0,
+          0,
+          84
+        ]
+      ],
+      "per_class_recall": {
+        "ADC": 0.95,
+        "LCC": 1.0,
+        "NOR": 0.9259259259259259,
+        "SCC": 0.9333333333333333
+      }
+    },
+    "region": {
+      "n": 288,
+      "correct": 275,
+      "accuracy": 0.9548611111111112,
+      "wilson95_accuracy_ci": [
+        0.9243140652002159,
+        0.9734336402105203
+      ],
+      "macro_f1": 0.9589474984742896,
+      "balanced_accuracy": 0.9573257080610021,
+      "confusion_true_rows": [
+        [
+          114,
+          4,
+          0,
+          2
+        ],
+        [
+          2,
+          49,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          26,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          86
+        ]
+      ],
+      "per_class_recall": {
+        "ADC": 0.95,
+        "LCC": 0.9607843137254902,
+        "NOR": 0.9629629629629629,
+        "SCC": 0.9555555555555556
+      }
+    },
+    "fixed_15": {
+      "n": 288,
+      "correct": 278,
+      "accuracy": 0.9652777777777778,
+      "wilson95_accuracy_ci": [
+        0.9372746266073515,
+        0.9810321865608822
+      ],
+      "macro_f1": 0.9683702430444515,
+      "balanced_accuracy": 0.969212962962963,
+      "confusion_true_rows": [
+        [
+          115,
+          4,
+          0,
+          1
+        ],
+        [
+          0,
+          51,
+          0,
+          0
+        ],
+        [
+          1,
+          0,
+          26,
+          0
+        ],
+        [
+          4,
+          0,
+          0,
+          86
+        ]
+      ],
+      "per_class_recall": {
+        "ADC": 0.9583333333333334,
+        "LCC": 1.0,
+        "NOR": 0.9629629629629629,
+        "SCC": 0.9555555555555556
+      }
+    }
+  },
+  "disclaimer": "No threshold or region mixing optimized on test. Test-level slice association and patient IDs unknown."
+}

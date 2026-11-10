@@ -1,0 +1,62 @@
+{
+  "evidence": "External patient-labelled, curated ADC/SCC only. NOT four-class external validation.",
+  "cohort": "Lung-PET-CT-Dx",
+  "manifest_hash": "1334026187377d7fe178f777ebfcf315a16bc8cdb2afcb2eaa5d63f67401d085",
+  "n_images": 1211,
+  "n_patients": 251,
+  "conditional_adc_scc_image_level": {
+    "n": 1211,
+    "accuracy": 0.7118084227910817,
+    "correct": 862,
+    "CI95_wilson": [
+      0.6856609391659303,
+      0.736616384574728
+    ],
+    "balanced_accuracy": 0.5438561434608505,
+    "macro_f1": 0.5458898008696708,
+    "confusion_true_rows": [
+      [
+        797,
+        146
+      ],
+      [
+        203,
+        65
+      ]
+    ],
+    "auroc": 0.5910518985137937,
+    "ap_scc": 0.2739759354148107
+  },
+  "conditional_adc_scc_patient_level": {
+    "n": 251,
+    "accuracy": 0.7131474103585658,
+    "correct": 179,
+    "CI95_wilson": [
+      0.6543110066517623,
+      0.7655578816176498
+    ],
+    "balanced_accuracy": 0.5148054145516074,
+    "macro_f1": 0.512621359223301,
+    "confusion_true_rows": [
+      [
+        170,
+        27
+      ],
+      [
+        45,
+        9
+      ]
+    ],
+    "auroc": 0.5973867268283513,
+    "ap_scc": 0.2667415635036227
+  },
+  "full_four_class_on_adc_scc_subset_image_accuracy": 0.010734929810074319,
+  "full_four_class_on_adc_scc_subset_patient_accuracy": 0.0,
+  "limitations": [
+    "Patient cohort and ADC/SCC labels must have been audited externally; code does not verify clinical provenance.",
+    "No NORMAL/LCC cases; cannot claim full four-class external performance.",
+    "DICOM conversion/window and slice selection must be frozen in a separate log; PNG/JPG only.",
+    "Model originally trained on chest PNG crops, may fail on full DICOM CT slices; report shift and failures.",
+    "Multiple slices/patient are correlated; primary metric patient level."
+  ]
+}

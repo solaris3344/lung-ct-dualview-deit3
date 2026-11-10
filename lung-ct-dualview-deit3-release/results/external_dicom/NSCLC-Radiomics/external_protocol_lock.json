@@ -1,0 +1,8 @@
+{
+  "plan_signature": "522710c76a60df73d6776ae8a05e75d46c943dbc006215bf81d045a49ed3dae2",
+  "method": "0.85global+0.15region",
+  "cohort": "NSCLC-Radiomics",
+  "external_manifest_hash": "5837cc670273fa05a0d04d45ee0511fea3d7b6a2663c7d80c48c2f6b6c2dd647",
+  "n_images": 994,
+  "n_patients": 201
+}

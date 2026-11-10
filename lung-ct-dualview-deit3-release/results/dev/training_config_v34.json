@@ -1,0 +1,13 @@
+{
+  "signature": "522710c76a60df73d6776ae8a05e75d46c943dbc006215bf81d045a49ed3dae2",
+  "fingerprint": "5763e693aaf61c928b829cfa2926218c02917358b4e6cdf2ba5673f28b988946",
+  "epochs": 20,
+  "batch": 2,
+  "accum": 4,
+  "backbone_lr": 3e-05,
+  "head_lr": 0.0003,
+  "freeze_epochs": 1,
+  "global_loss": 0.8,
+  "grad_ckpt": true,
+  "model": "deit3_base_patch16_224.fb_in22k_ft_in1k"
+}

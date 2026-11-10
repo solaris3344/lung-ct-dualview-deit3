@@ -1,0 +1,12 @@
+{
+  "status": "3_seed_final_refit_complete",
+  "model_weights": {
+    "42": "e5c57946fb60d858543f43125b38f04abe6852875734d351991ec31107b73640",
+    "52": "84d0cecd00e8c8d2f49f3b95830fa5531eec9fa997d4515c921e17b782e7d3b7",
+    "62": "0bd601f7a7fb7a139e8c3e09d0f5eb059fc53c3bdf554048c97536d91c80de4e"
+  },
+  "plan_signature": "522710c76a60df73d6776ae8a05e75d46c943dbc006215bf81d045a49ed3dae2",
+  "n_dev": 558,
+  "epochs": 20,
+  "note": "No test dataset read during refit."
+}

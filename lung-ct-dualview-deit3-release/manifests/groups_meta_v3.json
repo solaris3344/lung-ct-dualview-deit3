@@ -1,0 +1,17 @@
+{
+  "version": "CHEST_DUPLICATE_AWARE_GROUP_CV_V3",
+  "fingerprint": "6a23bad2420f8497611644c42b865465bc58e2e7a2e7c69f69920594d8cc34a4",
+  "feat_model": "deit3_base_patch16_224.fb_in22k_ft_in1k",
+  "reviewed_links_sha256": "51045bcf9099fa3f95e69236e201e42508eb214adcb62a1924376687e96e2e45",
+  "approval_signature": "1fa86ca7b1bc3acd68ec9ae8fa93208fa64e5c87429e96f157ca2891a88577bc",
+  "n_groups": 508,
+  "largest": 7,
+  "n_groups_ge2": 32,
+  "images_in_groups_ge2": 82,
+  "mixed_label_groups": 0,
+  "images_in_mixed_label_groups": 0,
+  "exact_pixel_edges": 0,
+  "manually_approved_edges": 79,
+  "unreviewed_candidates": 0,
+  "warning": "Groups are source-image proxies, never verified patients."
+}

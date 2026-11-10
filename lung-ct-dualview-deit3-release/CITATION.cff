@@ -1,0 +1,54 @@
+cff-version: 1.2.0
+message: "If you use this software or its manifests, please cite the manuscript and this release."
+title: "Similarity-Aware Evaluation of a Shared-Weight Dual-View DeiT3 Model with Crop-Policy Ablation for Lung CT Classification"
+abstract: >-
+  Research code and locked evaluation artifacts for a shared-weight dual-view
+  DeiT3-Base image classifier on a curated four-class lung CT image collection
+  (adenocarcinoma, large-cell carcinoma, normal, squamous cell carcinoma).
+  This release covers the dual-view system (arm A2), its 558-image development
+  out-of-fold predictions, its locked 288-image same-source test predictions,
+  the dataset-relative inventory with 508 dHash similarity groups and five
+  group-disjoint folds, and aggregate external DICOM reports. It does not cover
+  the independent-baseline arms (A1, A3, A4) or the crop-policy arms (S1, S2, S3),
+  whose training artifacts were not available at staging time.
+type: software
+version: "0.1.0"
+date-released: "2026-11-10"
+authors:
+  - family-names: Keser
+    given-names: Serkan
+    affiliation: "Department of Electrical and Electronics Engineering, Kırşehir Ahi Evran University, Kırşehir, Türkiye"
+    email: skeser@ahievran.edu.tr
+    corresponding: true
+  - family-names: Hayber
+    given-names: "Şekip Esat"
+    affiliation: "Department of Electrical-Electronics Engineering, Bursa Uludağ University, Bursa, Türkiye"
+keywords:
+  - chest computed tomography
+  - DeiT III
+  - dual-view classification
+  - cross-fitted crop selection
+  - similarity-aware evaluation
+  - reproducible benchmark
+references:
+  - type: article
+    title: "Similarity-Aware Evaluation of a Shared-Weight Dual-View DeiT3 Model with Crop-Policy Ablation for Lung CT Classification"
+    authors:
+      - family-names: Keser
+        given-names: Serkan
+      - family-names: Hayber
+        given-names: "Şekip Esat"
+    status: submitted
+    notes: >-
+      Author list, affiliations and the corresponding e-mail address were copied
+      verbatim from the manuscript source file; no DOI/venue was available at
+      staging time, so no DOI is claimed here.
+preferred-citation:
+  type: article
+  title: "Similarity-Aware Evaluation of a Shared-Weight Dual-View DeiT3 Model with Crop-Policy Ablation for Lung CT Classification"
+  authors:
+    - family-names: Keser
+      given-names: Serkan
+    - family-names: Hayber
+      given-names: "Şekip Esat"
+  year: 2026

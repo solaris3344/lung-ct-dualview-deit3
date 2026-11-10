@@ -1,0 +1,8 @@
+{
+  "plan_signature": "522710c76a60df73d6776ae8a05e75d46c943dbc006215bf81d045a49ed3dae2",
+  "method": "0.85global+0.15region",
+  "cohort": "NSCLC-Radiomics-FullField-DiagV314",
+  "external_manifest_hash": "e1ca0793504de31eca745c1b546c75b539a9f831012ab8162fe1f3bd51a9e567",
+  "n_images": 994,
+  "n_patients": 201
+}

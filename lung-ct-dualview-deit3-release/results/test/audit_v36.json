@@ -1,0 +1,33 @@
+{
+  "v34_out": "runs/adaptive_region_v34_20ep_3seed",
+  "v34_report_exists": true,
+  "saved_fold_weights_count": 0,
+  "saved_resume_count": 0,
+  "saved_fold_predictions_count": 15,
+  "final_seed_weights": {
+    "42": "runs/adaptive_region_v36_test_locked/final_seed42.pt",
+    "52": "runs/adaptive_region_v36_test_locked/final_seed52.pt",
+    "62": "runs/adaptive_region_v36_test_locked/final_seed62.pt"
+  },
+  "important": "V3.4 OOF predictions cannot be used to predict 288 holdout images. Final-refit of 3 models is separate from prior 15-fold ensemble.",
+  "original_v34_heldout_DEV_only": {
+    "correct": 539,
+    "acc": 0.9659498207885304,
+    "epochs": 20,
+    "seeds": [
+      42,
+      52,
+      62
+    ]
+  },
+  "n_dev": 558,
+  "n_groups": 508,
+  "class_order": [
+    "ADC",
+    "LCC",
+    "NOR",
+    "SCC"
+  ],
+  "plan_signature": "522710c76a60df73d6776ae8a05e75d46c943dbc006215bf81d045a49ed3dae2",
+  "feature_fingerprint": "5763e693aaf61c928b829cfa2926218c02917358b4e6cdf2ba5673f28b988946"
+}

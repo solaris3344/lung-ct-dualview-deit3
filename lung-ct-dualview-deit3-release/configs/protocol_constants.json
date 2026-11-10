@@ -1,0 +1,66 @@
+{
+  "protocol": "V3.4 20-epoch three-seed cross-fitted shared-weight dual-view DeiT3 (manuscript arm A2)",
+  "cv_plan_signature": "522710c76a60df73d6776ae8a05e75d46c943dbc006215bf81d045a49ed3dae2",
+  "seeds": [42, 52, 62],
+  "outer_folds": 5,
+  "inner_selector_folds": 3,
+  "epochs": 20,
+  "backbone": {
+    "timm_id": "deit3_base_patch16_224.fb_in22k_ft_in1k",
+    "pretrained": "supervised ImageNet-22k pre-training, ImageNet-1k fine-tuning (Apache-2.0 weights)",
+    "trainable_parameters_reported_millions": 85.82,
+    "trainable_parameters_note": "85.82 M is the manuscript value with the 4-class head; the upstream timm checkpoint has 86,585,320 parameters in total including its 1000-class head.",
+    "upstream_checkpoint_parameters": 86585320
+  },
+  "input": {
+    "size": [224, 224],
+    "interpolation": "bicubic",
+    "color": "RGB (PIL convert, EXIF orientation corrected)",
+    "aspect_ratio_preserved": false,
+    "normalization": {"mean": [0.485, 0.456, 0.406], "std": [0.229, 0.224, 0.225]}
+  },
+  "crop_candidates": {
+    "views": ["global", "center72", "center90", "upper_left", "upper_right", "lower_left", "lower_right"],
+    "center72": {"side_fraction": 0.72, "anchor": "centre"},
+    "center90": {"side_fraction": 0.90, "anchor": "centre"},
+    "corner_crops": {"side_fraction": 0.72, "anchors": ["upper_left", "upper_right", "lower_left", "lower_right"]},
+    "note": "Purely geometric crops; never a lung mask or a lesion segmentation. round() is used for pixel sizes and integer floor division for centring."
+  },
+  "selector": {
+    "features": "frozen 768-D DeiT3 global + six crops, shape 558 x 7 x 768 (development)",
+    "standardization": "StandardScaler per view, clipped to [-8, 8]",
+    "classifier": "L2 logistic regression, C = 0.03, class_weight = balanced, max_iter = 1700",
+    "rule": "pick the crop whose expert gives the highest maximum class probability",
+    "train_assignment": "inner 3-fold StratifiedGroupKFold out-of-fold choice inside each outer training part (inner seed 1137 + fold)",
+    "eval_assignment": "six experts refitted on the whole outer training part",
+    "cross_fitting": true
+  },
+  "training": {
+    "loss": "class-weighted cross-entropy on both views, weights 0.80 global / 0.20 regional",
+    "class_weight_formula": "sqrt(n_train / (4 * n_class))",
+    "optimizer": "AdamW, weight_decay 0.02",
+    "lr_backbone": 3e-05,
+    "lr_head": 0.0003,
+    "scheduler": "cosine annealing over 20 epochs, eta_min 1e-7",
+    "batch": 2,
+    "grad_accum": 4,
+    "freeze_backbone_epochs": 1,
+    "augmentation": "Resize 224 bicubic + RandomAffine(degrees=7, translate=0.03, scale=0.97-1.03, fill=0)",
+    "amp": true,
+    "grad_clip": 2.0,
+    "gradient_checkpointing": true
+  },
+  "inference": {
+    "final_probability": "0.85 * P_global + 0.15 * P_region",
+    "seed_aggregation": "arithmetic mean of the three seed models",
+    "tta": false,
+    "threshold_tuning_on_test": false
+  },
+  "evaluation": {
+    "primary": "four-class top-1 accuracy on 288 held-out same-source images",
+    "secondary": ["macro-F1", "balanced accuracy", "per-class recall", "confusion matrix", "Wilson 95% accuracy interval"],
+    "pairing_unit": "image",
+    "cluster_sensitivity": "dHash similarity-group bootstrap (not patient clustering)"
+  },
+  "source_of_record": "src/experiment_v34.py, src/validate_v36.py, results/dev/training_config_v34.json, results/test/final_refit_config.json, docs/METHOD_FREEZE.md"
+}

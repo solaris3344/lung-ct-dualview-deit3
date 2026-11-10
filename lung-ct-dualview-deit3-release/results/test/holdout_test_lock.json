@@ -1,0 +1,14 @@
+{
+  "status": "TEST_LOCKED_BEFORE_INFERENCE",
+  "method": "0.85 global + 0.15 selected region",
+  "n_expected": 288,
+  "signature": "522710c76a60df73d6776ae8a05e75d46c943dbc006215bf81d045a49ed3dae2",
+  "fingerprint": "5763e693aaf61c928b829cfa2926218c02917358b4e6cdf2ba5673f28b988946",
+  "test_manifest_sha": "00f29024bae662c25a73064603b277ad8ad61c3bcc5ce65659ba38b65345b3d3",
+  "weights_sha256": {
+    "42": "e5c57946fb60d858543f43125b38f04abe6852875734d351991ec31107b73640",
+    "52": "84d0cecd00e8c8d2f49f3b95830fa5531eec9fa997d4515c921e17b782e7d3b7",
+    "62": "0bd601f7a7fb7a139e8c3e09d0f5eb059fc53c3bdf554048c97536d91c80de4e"
+  },
+  "notes": "Test never used for model selection. Only once. Comparisons to DEV OOF are descriptive due to final refit."
+}

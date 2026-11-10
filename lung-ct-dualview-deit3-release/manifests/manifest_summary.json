@@ -1,0 +1,48 @@
+{
+  "generated_from": "datasets/chest_ct/Data_exact_clean_v1_1 (read-only, 846 files hashed)",
+  "n_images": 846,
+  "n_dev": 558,
+  "n_test": 288,
+  "n_train_original": 493,
+  "n_valid_original": 65,
+  "class_order": [
+    "ADC",
+    "LCC",
+    "NOR",
+    "SCC"
+  ],
+  "class_counts_total": {
+    "ADC": 337,
+    "LCC": 186,
+    "NOR": 66,
+    "SCC": 257
+  },
+  "class_counts_dev": {
+    "ADC": 217,
+    "LCC": 135,
+    "NOR": 39,
+    "SCC": 167
+  },
+  "class_counts_test": {
+    "ADC": 120,
+    "LCC": 51,
+    "NOR": 27,
+    "SCC": 90
+  },
+  "n_dev_groups": 508,
+  "largest_group": 7,
+  "groups_with_ge2": 32,
+  "folds": {
+    "0": 112,
+    "1": 111,
+    "2": 112,
+    "3": 112,
+    "4": 111
+  },
+  "plan_signature": "522710c76a60df73d6776ae8a05e75d46c943dbc006215bf81d045a49ed3dae2",
+  "plan_fingerprint": "6a23bad2420f8497611644c42b865465bc58e2e7a2e7c69f69920594d8cc34a4",
+  "dev_features_sha256": "05ef772096edb758cd63e4ed95dbebc9a3672eb59c25ee28b43640e571d74eae",
+  "manifest_digest_sha256": "59667b2636c8e65e636837be27eae1c506a784be566f608e77dfa35f496aa98b",
+  "exact_duplicate_contents": 0,
+  "dev_test_content_overlap": 0
+}

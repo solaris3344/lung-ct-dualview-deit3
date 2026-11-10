@@ -1,0 +1,49 @@
+{
+  "signature": "522710c76a60df73d6776ae8a05e75d46c943dbc006215bf81d045a49ed3dae2",
+  "n_dev": 558,
+  "n_similarity_groups": 508,
+  "train_region_choice": "3-fold inner OOF on each outer train",
+  "heldout_region_choice": "train-on-outer-train only",
+  "selected_view_counts_per_outer_fold": [
+    {
+      "center72": 16,
+      "center90": 21,
+      "upper_left": 26,
+      "upper_right": 12,
+      "lower_left": 16,
+      "lower_right": 21
+    },
+    {
+      "center72": 9,
+      "center90": 21,
+      "upper_left": 14,
+      "upper_right": 28,
+      "lower_left": 18,
+      "lower_right": 21
+    },
+    {
+      "center72": 10,
+      "center90": 17,
+      "upper_left": 11,
+      "upper_right": 24,
+      "lower_left": 25,
+      "lower_right": 25
+    },
+    {
+      "center72": 11,
+      "center90": 19,
+      "upper_left": 23,
+      "upper_right": 16,
+      "lower_left": 20,
+      "lower_right": 23
+    },
+    {
+      "center72": 8,
+      "center90": 23,
+      "upper_left": 16,
+      "upper_right": 18,
+      "lower_left": 22,
+      "lower_right": 24
+    }
+  ]
+}

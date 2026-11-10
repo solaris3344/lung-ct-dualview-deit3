@@ -1,0 +1,12 @@
+{
+  "class_order": ["ADC", "LCC", "NOR", "SCC"],
+  "class_index": {"ADC": 0, "LCC": 1, "NOR": 2, "SCC": 3},
+  "label_folder_prefix_to_class": {
+    "adenocarcinoma": "ADC",
+    "large.cell.carcinoma": "LCC",
+    "normal": "NOR",
+    "squamous.cell.carcinoma": "SCC"
+  },
+  "note": "This order is used everywhere: true_class, *_pred and *_p0..*_p3 columns in every CSV, the confusion matrices in the JSON reports, and the argmax of the model head. Do not re-sort.",
+  "source_of_record": "src/experiment_v34.py constants LABELS / CLASS_SHORT; results/test/test_report_v36.json per_class_recall key order"
+}

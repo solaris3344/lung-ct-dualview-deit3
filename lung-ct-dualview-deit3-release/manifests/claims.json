@@ -1,0 +1,319 @@
+[
+  {
+    "id": "C01",
+    "arm": "DATA",
+    "statement": "Curated exact-cleaned inventory contains 846 unique image files with 846 distinct SHA-256 contents",
+    "metric": "n_images",
+    "expected": 846,
+    "tol": 0,
+    "source": "manifests/images_846.csv",
+    "manuscript": "Sec. 2.1"
+  },
+  {
+    "id": "C02",
+    "arm": "DATA",
+    "statement": "Development partition has 558 images (493 original train + 65 original valid)",
+    "metric": "n_dev",
+    "expected": 558,
+    "tol": 0,
+    "source": "manifests/images_846.csv",
+    "manuscript": "Sec. 2.1, Table 1"
+  },
+  {
+    "id": "C03",
+    "arm": "DATA",
+    "statement": "Held-out same-source test has 288 images",
+    "metric": "n_test",
+    "expected": 288,
+    "tol": 0,
+    "source": "manifests/test_manifest_288.csv",
+    "manuscript": "Sec. 2.1, Table 1"
+  },
+  {
+    "id": "C04",
+    "arm": "DATA",
+    "statement": "Development images fall into 508 dHash similarity groups",
+    "metric": "n_groups",
+    "expected": 508,
+    "tol": 0,
+    "source": "manifests/dev_folds.csv",
+    "manuscript": "Sec. 2.2"
+  },
+  {
+    "id": "C05",
+    "arm": "DATA",
+    "statement": "No dHash group crosses the train/validation side of any of the 5 folds",
+    "metric": "group_leakage_folds",
+    "expected": 0,
+    "tol": 0,
+    "source": "manifests/dev_folds.csv",
+    "manuscript": "Sec. 2.2"
+  },
+  {
+    "id": "C06",
+    "arm": "DATA",
+    "statement": "No exact-duplicate file content is shared between development and the 288-image test",
+    "metric": "dev_test_sha_overlap",
+    "expected": 0,
+    "tol": 0,
+    "source": "manifests/images_846.csv",
+    "manuscript": "Sec. 2.2"
+  },
+  {
+    "id": "C07",
+    "arm": "DATA",
+    "statement": "Test class counts are ADC 120 / LCC 51 / NOR 27 / SCC 90",
+    "metric": "test_class_counts",
+    "expected": [120, 51, 27, 90],
+    "tol": 0,
+    "source": "manifests/test_manifest_288.csv",
+    "manuscript": "Table 1"
+  },
+  {
+    "id": "C08",
+    "arm": "A2",
+    "statement": "A2 (0.85 global + 0.15 selected region) is correct on 278/288 test images",
+    "metric": "test_correct_final",
+    "expected": 278,
+    "tol": 0,
+    "source": "results/test/test_predictions_v36.csv",
+    "manuscript": "Table 9, Abstract"
+  },
+  {
+    "id": "C09",
+    "arm": "A2",
+    "statement": "A2 test top-1 accuracy is 0.9652777... (278/288)",
+    "metric": "test_accuracy_final",
+    "expected": 0.9652777777777778,
+    "tol": 1e-12,
+    "source": "results/test/test_predictions_v36.csv",
+    "manuscript": "Table 9"
+  },
+  {
+    "id": "C10",
+    "arm": "A2",
+    "statement": "A2 test macro-F1 is 0.9683702...",
+    "metric": "test_macro_f1_final",
+    "expected": 0.9683702430444515,
+    "tol": 1e-12,
+    "source": "results/test/test_predictions_v36.csv",
+    "manuscript": "Table 9"
+  },
+  {
+    "id": "C11",
+    "arm": "A2",
+    "statement": "A2 test balanced accuracy is 0.9692129...",
+    "metric": "test_balanced_accuracy_final",
+    "expected": 0.969212962962963,
+    "tol": 1e-12,
+    "source": "results/test/test_predictions_v36.csv",
+    "manuscript": "Table 9"
+  },
+  {
+    "id": "C12",
+    "arm": "A2",
+    "statement": "A2 global-only branch is correct on 274/288 test images",
+    "metric": "test_correct_global",
+    "expected": 274,
+    "tol": 0,
+    "source": "results/test/test_predictions_v36.csv",
+    "manuscript": "results/test/test_report_v36.json (methods.global)"
+  },
+  {
+    "id": "C13",
+    "arm": "A2",
+    "statement": "A2 region-only branch is correct on 275/288 test images",
+    "metric": "test_correct_region",
+    "expected": 275,
+    "tol": 0,
+    "source": "results/test/test_predictions_v36.csv",
+    "manuscript": "results/test/test_report_v36.json (methods.region)"
+  },
+  {
+    "id": "C14",
+    "arm": "A2",
+    "statement": "A2 test confusion matrix (true rows ADC/LCC/NOR/SCC) is [[115,4,0,1],[0,51,0,0],[1,0,26,0],[4,0,0,86]]",
+    "metric": "test_confusion_final",
+    "expected": [[115, 4, 0, 1], [0, 51, 0, 0], [1, 0, 26, 0], [4, 0, 0, 86]],
+    "tol": 0,
+    "source": "results/test/test_predictions_v36.csv",
+    "manuscript": "Table 9 class results"
+  },
+  {
+    "id": "C15",
+    "arm": "A2",
+    "statement": "A2 pooled development OOF is 539/558 correct",
+    "metric": "oof_correct_fixed15",
+    "expected": 539,
+    "tol": 0,
+    "source": "results/dev/oof_v34.csv",
+    "manuscript": "Table 9"
+  },
+  {
+    "id": "C16",
+    "arm": "A2",
+    "statement": "A2 pooled development OOF accuracy is 0.96594982...",
+    "metric": "oof_accuracy_fixed15",
+    "expected": 0.9659498207885304,
+    "tol": 1e-12,
+    "source": "results/dev/oof_v34.csv",
+    "manuscript": "Table 9"
+  },
+  {
+    "id": "C17",
+    "arm": "A2",
+    "statement": "A2 pooled development OOF macro-F1 is 0.9453955197...",
+    "metric": "oof_macro_f1_fixed15",
+    "expected": 0.9453955197679369,
+    "tol": 1e-12,
+    "source": "results/dev/oof_v34.csv",
+    "manuscript": "results/dev/report_v34.json"
+  },
+  {
+    "id": "C18",
+    "arm": "A2",
+    "statement": "A2 OOF global-only branch is correct on 536/558 development images",
+    "metric": "oof_correct_global",
+    "expected": 536,
+    "tol": 0,
+    "source": "results/dev/oof_v34.csv",
+    "manuscript": "results/dev/report_v34.json"
+  },
+  {
+    "id": "C19",
+    "arm": "A2",
+    "statement": "A2 OOF region-only branch is correct on 527/558 development images",
+    "metric": "oof_correct_region",
+    "expected": 527,
+    "tol": 0,
+    "source": "results/dev/oof_v34.csv",
+    "manuscript": "results/dev/report_v34.json"
+  },
+  {
+    "id": "C20",
+    "arm": "LOCK",
+    "statement": "Recorded test-manifest digest 00f29024... is reproduced from the released 288-row manifest",
+    "metric": "test_manifest_sha",
+    "expected": "00f29024bae662c25a73064603b277ad8ad61c3bcc5ce65659ba38b65345b3d3",
+    "tol": 0,
+    "source": "manifests/test_manifest_288.csv vs results/test/holdout_test_lock.json",
+    "manuscript": "Sec. 2.11 reproducibility"
+  },
+  {
+    "id": "C21",
+    "arm": "LOCK",
+    "statement": "Recorded frozen-feature fingerprint 5763e693... is reproduced from the released manifests plus the published feature-array digest",
+    "metric": "feature_fingerprint",
+    "expected": "5763e693aaf61c928b829cfa2926218c02917358b4e6cdf2ba5673f28b988946",
+    "tol": 0,
+    "source": "manifests/dev_image_list_v3.csv + dev_groups.csv + feature_cache_provenance.json",
+    "manuscript": "METHOD_FREEZE.md"
+  },
+  {
+    "id": "C22",
+    "arm": "LOCK",
+    "statement": "Recorded CV-plan signature 522710c7... is reproduced by the grouping/fold manifests",
+    "metric": "plan_signature",
+    "expected": "522710c76a60df73d6776ae8a05e75d46c943dbc006215bf81d045a49ed3dae2",
+    "tol": 0,
+    "source": "manifests/dev_plan_v3.json",
+    "manuscript": "METHOD_FREEZE.md"
+  },
+  {
+    "id": "C23",
+    "arm": "EXT",
+    "statement": "External Lung-PET-CT-Dx patient-level ADC/SCC AUROC is 0.597 (weak transfer)",
+    "metric": "ext_lungpet_patient_auroc",
+    "expected": 0.5973867268283513,
+    "tol": 1e-12,
+    "source": "results/external_dicom/Lung-PET-CT-Dx/report_external.json",
+    "manuscript": "Sec. 4 limitations / Supplementary S2"
+  },
+  {
+    "id": "C24",
+    "arm": "EXT",
+    "statement": "External NSCLC-Radiomics full-field patient-level ADC/SCC AUROC is 0.531 (weak transfer)",
+    "metric": "ext_nsclc_ff_patient_auroc",
+    "expected": 0.5311111111111112,
+    "tol": 1e-12,
+    "source": "results/external_dicom/NSCLC-Radiomics-FullField-DiagV314/report_external.json",
+    "manuscript": "Sec. 4 limitations / Supplementary S2"
+  },
+  {
+    "id": "C25",
+    "arm": "A1",
+    "statement": "Independent global-only DeiT3-Base (A1) test accuracy 94.44% = 272/288",
+    "metric": null,
+    "expected": 272,
+    "tol": 0,
+    "source": null,
+    "manuscript": "Table 9",
+    "status": "unverifiable"
+  },
+  {
+    "id": "C26",
+    "arm": "A3",
+    "statement": "ResNet-34 + Random Pixel Swap (A3) test accuracy 91.32% = 263/288",
+    "metric": null,
+    "expected": 263,
+    "tol": 0,
+    "source": null,
+    "manuscript": "Table 9",
+    "status": "unverifiable"
+  },
+  {
+    "id": "C27",
+    "arm": "A4",
+    "statement": "ResNet-34 without RPS (A4) test accuracy 88.89% = 256/288",
+    "metric": null,
+    "expected": 256,
+    "tol": 0,
+    "source": null,
+    "manuscript": "Table 9",
+    "status": "unverifiable"
+  },
+  {
+    "id": "C28",
+    "arm": "S1",
+    "statement": "Fixed 72% centre crop (S1) OOF 0.9516 (531/558) and test 0.9583 (276/288)",
+    "metric": null,
+    "expected": [0.9516129032258065, 0.9583333333333334],
+    "tol": 0,
+    "source": null,
+    "manuscript": "Table 11",
+    "status": "unverifiable"
+  },
+  {
+    "id": "C29",
+    "arm": "S2",
+    "statement": "Fixed 90% centre crop (S2) OOF 0.9588 (535/558) and test 0.9479 (273/288)",
+    "metric": null,
+    "expected": [0.9587813620071685, 0.9479166666666666],
+    "tol": 0,
+    "source": null,
+    "manuscript": "Table 11",
+    "status": "unverifiable"
+  },
+  {
+    "id": "C30",
+    "arm": "S3",
+    "statement": "Deterministic random-candidate crop (S3) OOF 0.9588 (535/558) and test 0.9653 (278/288)",
+    "metric": null,
+    "expected": [0.9587813620071685, 0.9652777777777778],
+    "tol": 0,
+    "source": null,
+    "manuscript": "Table 11",
+    "status": "unverifiable"
+  },
+  {
+    "id": "C31",
+    "arm": "A2-vs-S3",
+    "statement": "A2 versus S3 test difference is 0/288 images; both are 278/288 and the paired test is non-significant",
+    "metric": null,
+    "expected": 0,
+    "tol": 0,
+    "source": null,
+    "manuscript": "Table 11 / Sec. 3.7",
+    "status": "partially-unverifiable"
+  }
+]

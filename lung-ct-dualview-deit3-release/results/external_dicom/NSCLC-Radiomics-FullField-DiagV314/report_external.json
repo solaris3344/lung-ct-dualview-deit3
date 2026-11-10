@@ -1,0 +1,62 @@
+{
+  "evidence": "External patient-labelled, curated ADC/SCC only. NOT four-class external validation.",
+  "cohort": "NSCLC-Radiomics-FullField-DiagV314",
+  "manifest_hash": "e1ca0793504de31eca745c1b546c75b539a9f831012ab8162fe1f3bd51a9e567",
+  "n_images": 994,
+  "n_patients": 201,
+  "conditional_adc_scc_image_level": {
+    "n": 994,
+    "accuracy": 0.36519114688128773,
+    "correct": 363,
+    "CI95_wilson": [
+      0.3358312404243503,
+      0.39558901914600497
+    ],
+    "balanced_accuracy": 0.5182586292426109,
+    "macro_f1": 0.36309679148892093,
+    "confusion_true_rows": [
+      [
+        210,
+        43
+      ],
+      [
+        588,
+        153
+      ]
+    ],
+    "auroc": 0.527339936950921,
+    "ap_scc": 0.7649146116453687
+  },
+  "conditional_adc_scc_patient_level": {
+    "n": 201,
+    "accuracy": 0.3681592039800995,
+    "correct": 74,
+    "CI95_wilson": [
+      0.3045372213949125,
+      0.43672609363355036
+    ],
+    "balanced_accuracy": 0.5249019607843137,
+    "macro_f1": 0.36589909829346445,
+    "confusion_true_rows": [
+      [
+        43,
+        8
+      ],
+      [
+        119,
+        31
+      ]
+    ],
+    "auroc": 0.5311111111111112,
+    "ap_scc": 0.7648425945242732
+  },
+  "full_four_class_on_adc_scc_subset_image_accuracy": 0.035211267605633804,
+  "full_four_class_on_adc_scc_subset_patient_accuracy": 0.029850746268656716,
+  "limitations": [
+    "Patient cohort and ADC/SCC labels must have been audited externally; code does not verify clinical provenance.",
+    "No NORMAL/LCC cases; cannot claim full four-class external performance.",
+    "DICOM conversion/window and slice selection must be frozen in a separate log; PNG/JPG only.",
+    "Model originally trained on chest PNG crops, may fail on full DICOM CT slices; report shift and failures.",
+    "Multiple slices/patient are correlated; primary metric patient level."
+  ]
+}
